@@ -19,7 +19,7 @@ void create_DList()
 {
   int num;
   node *temp, *temp1;
-  printf("Enter a maximum node to be add :");
+  printf("Enter a number node to be add :");
   scanf("%d", &num);
   for (int i = 1; i <= num; i++)
   {
