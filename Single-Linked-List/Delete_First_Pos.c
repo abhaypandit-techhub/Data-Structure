@@ -17,7 +17,7 @@ void create()
 {
   int n;
   node *temp, *temp1;
-  printf("Enter a maximum node to create :");
+  printf("Enter a number of node to create :");
   scanf("%d", &n);
   for (int i = 1; i <= n; i++)
   {
@@ -45,11 +45,16 @@ void display()
 {
   node *temp;
   temp = head;
+  if(temp==NULL){
+    printf("\nNow single linked list is empty after deletion!");
+  }
+  else{
   while (temp != NULL)
   {
     printf("%d\t", temp->data);
     temp = temp->next;
   }
+}
 }
 
 // DELETE NODE AT FIRST POSITION
