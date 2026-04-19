@@ -1,4 +1,4 @@
-//DELETION OF FIRST NODE
+//DELETION OF FIRST NODE IN DOUBLE LINKED LIST
 
 #include <stdio.h>
 #include <stdlib.h>
