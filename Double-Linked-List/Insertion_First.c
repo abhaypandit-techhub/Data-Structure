@@ -1,4 +1,4 @@
-//INSERTION AT FIRST DOUBLE LINKED LIST
+// INSERTION AT FIRST DOUBLE LINKED LIST
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -54,10 +54,11 @@ void InsertFirst()
   printf("\nEnter a data for new node to be insert at first : ");
   scanf("%d", &temp->data);
   temp->prev = NULL;
-  temp->next = start;
-  if(start!=NULL){
-start->prev=temp;
+  if (start != NULL)
+  {
+    start->prev = temp;
   }
+  temp->next = start;
   start = temp;
   printf("\nNode is inserted at first successfully\n");
 }
