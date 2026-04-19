@@ -39,7 +39,7 @@ void create()
 
 // ADDITION OF NODE AT MIDDLE
 
-void insertion_at_mid(int count)
+void Insertion_at_Mid(int count)
 {
   int mid = (count / 2) ;
   node *temp, *temp1;
@@ -97,7 +97,7 @@ int main()
     }
     else if (n == 2)
     {
-      insertion_at_mid(count);
+      Insertion_at_Mid(count);
       count++;
     }
     else if (n == 3)
