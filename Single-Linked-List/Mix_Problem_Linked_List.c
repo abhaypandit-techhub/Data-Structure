@@ -86,6 +86,26 @@ void Insertion_at_last()
   printf("Node inserted at last successfully\n");
 }
 
+// ADDITION OF NODE AT MIDDLE
+
+void Insertion_at_Mid(int count)
+{
+  int mid = (count / 2) ;
+  node *temp, *temp1;
+  temp = (node *)malloc(sizeof(node));
+  printf("Enter a node data : ");
+  scanf("%d", &temp->data);
+  temp->next = NULL;
+
+    temp1 = start;
+    for (int i = 1; i < mid ; i++)
+    {
+      temp1 = temp1->next;
+    }
+    temp->next = temp1->next;
+    temp1->next = temp;
+  }
+
 // INSERT NODE AT ANY POSITION
 
 void Insert_at_AnyPos()
@@ -220,7 +240,7 @@ int main()
   int n;
   while (1)
   {
-    printf("\nPress 1 for create a node\nPress 2 for Insertion at first\nPress 3 for Insertion at last\nPress 4 for Insertion at any Position\nPress 5 for CountNode\nPress 6 for Delete first node\nPress 7 for Delete last node\nPress 8 for Display List\nPress 9 for Exist\nEnter a choice : ");
+    printf("\nPress 1 for create a node\nPress 2 for Insertion at first\nPress 3 for Insertion at last\nPress 4 for Insertion at Mid\nPress 5 for Insertion at any Position\nPress 6 for CountNode\nPress 7 for Delete first node\nPress 8 for Delete last node\nPress 9 for Display List\nPress 10 for Exist\nEnter a choice : ");
     scanf("%d", &n);
     if (n == 1)
     {
@@ -236,25 +256,29 @@ int main()
     }
     else if (n == 4)
     {
-      Insert_at_AnyPos();
+      Insertion_at_Mid();
     }
     else if (n == 5)
     {
-      count_node();
+      Insert_at_AnyPos();
     }
     else if (n == 6)
     {
-      FirstDelete();
+      count_node();
     }
     else if (n == 7)
     {
-      lastDelete();
+      FirstDelete();
     }
     else if (n == 8)
     {
-      display();
+      lastDelete();
     }
     else if (n == 9)
+    {
+      display();
+    }
+    else if (n == 10)
     {
       break;
     }
