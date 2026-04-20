@@ -1,4 +1,4 @@
-// DELETE LAST NODE DOUBLE LINKED LIST
+// DELETE LAST NODE IN DOUBLE LINKED LIST
 
 #include <stdio.h>
 #include <stdlib.h>
