@@ -64,12 +64,14 @@ void display()
 
 void searchNumber(){
   int num;
+  int count=0;
  int found=0; 
   node*temp;
   temp=start;
   printf("\nEnter a element want to be a search : ");
   scanf("%d",&num);
   while(temp!=NULL){
+    count=count+1;
 if(num==temp->data){
   found=1;
   break;
@@ -77,7 +79,7 @@ if(num==temp->data){
 temp=temp->next;
 }
 if(found==1){
-  printf("\nElement are found in double linked list");
+  printf("\nElement are found in double linked list at %d position",count);
 }
 else{
   printf("\nElement are not found in double linked list");
