@@ -90,23 +90,35 @@ void Insertion_at_last()
 
 // ADDITION OF NODE AT MIDDLE
 
-void Insertion_at_Mid(int count)
+void Insertion_at_Mid()
 {
-  int mid = (count / 2) ;
   node *temp, *temp1;
+  int count = 0;
+
+  temp1 = start;
+
+  while (temp1 != NULL)
+  {
+    count++;
+    temp1 = temp1->next;
+  }
+
+  int mid = count / 2;
+
   temp = (node *)malloc(sizeof(node));
   printf("Enter a node data : ");
   scanf("%d", &temp->data);
-  temp->next = NULL;
 
-    temp1 = start;
-    for (int i = 1; i < mid ; i++)
-    {
-      temp1 = temp1->next;
-    }
-    temp->next = temp1->next;
-    temp1->next = temp;
+  temp1 = start;
+
+  for (int i = 1; i < mid; i++)
+  {
+    temp1 = temp1->next;
   }
+
+  temp->next = temp1->next;
+  temp1->next = temp;
+}
 
 // INSERT NODE AT ANY POSITION
 
