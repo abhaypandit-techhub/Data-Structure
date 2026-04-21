@@ -1,4 +1,4 @@
-//ARRAY BASED STACK
+// ARRAY BASED STACK
 
 #include <stdio.h>
 int a[10], top = -1;

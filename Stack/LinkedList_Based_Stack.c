@@ -1,70 +1,82 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-//STRUCTURE FOR STACK
+// STRUCTURE FOR STACK
 
-struct stack {
+struct stack
+{
   int data;
-  struct stack*next;
-}*top=NULL;
+  struct stack *next;
+} *top = NULL;
 typedef struct stack node;
 
 // Push OPERATION IN STACK
 
-void push(){
-  node*temp;
-  temp=(node*)malloc(sizeof(node));
-  temp->next=top;
+void push()
+{
+  node *temp;
+  temp = (node *)malloc(sizeof(node));
+  temp->next = top;
   printf("Enter value for node : ");
-  scanf("%d",&temp->data);
-  top=temp;
+  scanf("%d", &temp->data);
+  top = temp;
 }
 
-//POP OPERATION IN  STACK
+// POP OPERATION IN  STACK
 
-void pop(){
-  node*temp;
-  temp=top;
-  if(temp==NULL){
+void pop()
+{
+  node *temp;
+  temp = top;
+  if (temp == NULL)
+  {
     printf("\nStack is underflow!");
   }
-  else{
-    top=top->next;
-    printf("\nPop items is %d",temp->data);
+  else
+  {
+    top = top->next;
+    printf("\nPop items is %d", temp->data);
     free(temp);
     printf("\nPop is successfully");
   }
 }
 
-  // PEEK OPERATION STACK
+// PEEK OPERATION STACK
 
-  void peek(){
-    node*temp;
-    temp=top;
-    if(temp==NULL){
-      printf("\nStack is underflow!");
-    }
-    else{
-      printf("\nPeek items is %d",temp->data);
-    }
-  }
-//DISPLAY STACK
-
-void display(){
-  node*temp;
-  temp=top;
-  if(temp==NULL){
+void peek()
+{
+  node *temp;
+  temp = top;
+  if (temp == NULL)
+  {
     printf("\nStack is underflow!");
   }
-  else{
-    while(temp!=NULL){
-      printf("\n%d",temp->data);
-      temp=temp->next;
+  else
+  {
+    printf("\nPeek items is %d", temp->data);
+  }
+}
+// DISPLAY STACK
+
+void display()
+{
+  node *temp;
+  temp = top;
+  if (temp == NULL)
+  {
+    printf("\nStack is underflow!");
+  }
+  else
+  {
+    while (temp != NULL)
+    {
+      printf("\n%d", temp->data);
+      temp = temp->next;
     }
   }
 }
 
-//MAIN FUNCTION
+// MAIN FUNCTION
 
 int main()
 {
