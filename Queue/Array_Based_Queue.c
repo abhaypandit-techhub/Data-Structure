@@ -1,73 +1,87 @@
 // ARRAY BASED QUEUE
 
-#include<stdio.h>
-int a[10],front=-1,rear=-1;
+#include <stdio.h>
+int a[10], front = -1, rear = -1;
 
 // ENQUEUE OPERATION IN STACK
 
-void enqueue(){
-  if(front==-1&&rear==-1){
-    front=0;
-    rear=0;
+void enqueue()
+{
+  if (front == -1 && rear == -1)
+  {
+    front = 0;
+    rear = 0;
     printf("Enter a items for queue: ");
-    scanf("%d",&a[rear]);
+    scanf("%d", &a[rear]);
     printf("\nEnqueue is successfully");
     return;
   }
-  else if (rear==9)
+  else if (rear == 9)
   {
     printf("\nQueue is overflow!");
     return;
   }
-  else{
+  else
+  {
     rear++;
     printf("Enter a items for queue: ");
-    scanf("%d",&a[rear]);
+    scanf("%d", &a[rear]);
     printf("\nEnqueue is successfully");
   }
-} 
+}
 
 // DEQUEUE OPERATION IN QUEUE
 
-void dequeue(){
-  if(front==-1&&rear==-1){
-  printf("\nQueue is underflow!");
-  return;
-}
-else if(front>rear){
-  front=-1;
-  rear=-1;
-  printf("\nQueue is underflow!");
-  return;
-}
-else{
-  printf("\nDequeue items is %d",a[front]);
-  front++;
-}
-}
-
-//PEEK OPERATION IN QUEUE
-
-void peek(){
-  if(front==-1&&rear==-1){
-  printf("\nQueue is underflow!");
-  return;
+void dequeue()
+{
+  if (front == -1 && rear == -1)
+  {
+    printf("\nQueue is underflow!");
+    return;
   }
-  else{
-    printf("\npeek items in queue is %d",a[front]);
+  else if (front > rear)
+  {
+    front = -1;
+    rear = -1;
+    printf("\nQueue is underflow!");
+    return;
+  }
+  else
+  {
+    printf("\nDequeue items is %d", a[front]);
+    front++;
   }
 }
 
-//DISPLAY QUEUE
+// PEEK OPERATION IN QUEUE
 
-void display(){
-  if(front==-1&&rear==-1){
-  printf("\nQueue is underflow!");
-  return;
+void peek()
+{
+  if (front == -1 && rear == -1)
+  {
+    printf("\nQueue is underflow!");
+    return;
   }
-  else{
-    for(int i=front;i<=rear;i++){
-      printf("\n%d",a[i]);
+  else
+  {
+    printf("\npeek items in queue is %d", a[front]);
+  }
+}
+
+// DISPLAY QUEUE
+
+void display()
+{
+  if (front == -1 && rear == -1)
+  {
+    printf("\nQueue is underflow!");
+    return;
+  }
+  else
+  {
+    for (int i = front; i <= rear; i++)
+    {
+      printf("\n%d", a[i]);
     }
   }
   printf("\nDisplay queue is succcessfully");
