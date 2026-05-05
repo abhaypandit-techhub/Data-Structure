@@ -63,8 +63,7 @@ void display()
   }
   else
   {
-    int i;
-    for (i = top; i >= 0; i--)
+    for (int i = top; i >= 0; i--)
     {
       printf("\n%d", a[i]);
     }
