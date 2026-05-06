@@ -5,20 +5,31 @@
 #include <stdio.h>
 int main()
 {
+
   int mid, r = 0;
   int n;
   int target, found;
+
+  //SIZE OF ARRAY
+
   printf("Enter array size : ");
   scanf("%d", &n);
   int l = n - 1;
   int arr[n];
+
   for (int i = 0; i < n; i++)
   {
     printf("Enter a arr[%d] : ", i);
     scanf("%d", &arr[i]);
   }
+
+  // SEARCH TARGET ELEMENT
+
   printf("Enter a element want to search through a Binary : ");
   scanf("%d", &target);
+
+  // ACTUAL LOGIC
+
   while (r <= l)
   {
     mid = (r + l) / 2;
@@ -36,6 +47,9 @@ int main()
       l = mid - 1;
     }
   }
+
+  // CHECK FOUND OR NOT
+  
   if (found == 1)
   {
     printf("Element is found in array though a binary search at index %d", mid);
