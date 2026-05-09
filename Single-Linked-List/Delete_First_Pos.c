@@ -1,5 +1,5 @@
 
-//DELETE NODE AT FIRST POSITION
+// DELETE NODE AT FIRST POSITION
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -45,16 +45,18 @@ void display()
 {
   node *temp;
   temp = head;
-  if(temp==NULL){
+  if (temp == NULL)
+  {
     printf("\nNow single linked list is empty after deletion!");
   }
-  else{
-  while (temp != NULL)
+  else
   {
-    printf("%d\t", temp->data);
-    temp = temp->next;
+    while (temp != NULL)
+    {
+      printf("%d\t", temp->data);
+      temp = temp->next;
+    }
   }
-}
 }
 
 // DELETE NODE AT FIRST POSITION
@@ -63,9 +65,14 @@ void FirstDelete()
 {
   node *temp;
   temp = head;
-  head = temp->next;
-  printf("\nFirst node delete that is %d\n", temp->data);
-  free(temp); // Delete free node
+  if(head==NULL){
+    printf("Empty linked list!");
+  }
+  else{
+    head = temp->next;
+    printf("\nFirst node delete that is %d\n", temp->data);
+    free(temp); // Delete free node
+  }
 }
 
 // MAIN FUNCTION
